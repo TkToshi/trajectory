@@ -54,31 +54,32 @@
 
 | Column                | Type    | Options                   |
 | ------------------    | ------  | ------------------------- |
-| nickname              | string  | null: false, unique: true |*
-| email                 | string  | null: false, unique: true |*
-| encrypted_password    | string  | null: false,              |*
-| gender_id             | integer | null: false,              |*
-| user_profile          | text    | null: false,              |*
-| user_follower_figure  | integer | null: false,              |*
-| user_following_figure | integer | null: false,              |*
+| nickname              | string  | null: false, unique: true |
+| email                 | string  | null: false, unique: true |
+| encrypted_password    | string  | null: false,              |
+| gender_id             | integer | null: false,              |
+| user_profile          | text    | null: false,              |
+| user_follower_figure  | integer | null: false,              |
+| user_following_figure | integer | null: false,              |
 
 
 ### Association
 
-- has_one  : point *
-- has_many : posts *
-- has_many : likes *
-- has_many : relationships *
-- has_many : followers, through: :relationships *
-- has_many : followings, through: :relationships *
+- has_one  : point 
+- has_many : posts 
+- has_many : likes 
+- has_many : relationships 
+- has_many : followers, through: :relationships 
+- has_many : followings, through: :relationships 
 
 ## postsテーブル
 | Column             | Type         | Options                                          |
 | ------------------ | ------------ | ------------------------------------------------ |
-| post_text          | text         | null: false,                                     |*
-| visibility         | integer      | null: false, default: 0                          |*
-| created_at         | datetime     | null: false, default: -> { 'CURRENT_TIMESTAMP' } |*
-| user_id            | references   | null: false, foreign_key:true                    |*
+| post_text          | text         | null: false,                                     |
+| category_id        | integer      | null: false,                                     |
+| visibility         | integer      | null: false, default: 0                          |
+<!-- | created_at         | datetime     | null: false, default: -> { 'CURRENT_TIMESTAMP' } | -->
+| user_id            | references   | null: false, foreign_key:true                    |
 
 ### Association
 
