@@ -110,3 +110,172 @@ main {
   align-items: center;
   margin-bottom: 10px;
 }
+
+/* --ユーザー新規登録------ */
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 1px;
+}
+
+.logo {
+  font-size: 36px;
+  font-family: 'Billabong', sans-serif;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.field input {
+  width: 100%;
+  padding: 9px 7px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 9px 20px;
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.signup-button:hover {
+  background-color: #287bb5;
+  border-color: #287bb5;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* --ログインページ------ */
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 1px;
+}
+
+.logo {
+  font-size: 36px;
+  font-family: 'Billabong', sans-serif;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.field input {
+  width: 100%;
+  padding: 9px 7px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 9px 20px;
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-button:hover {
+  background-color: #287bb5;
+  border-color: #287bb5;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
