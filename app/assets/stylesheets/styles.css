@@ -1,11 +1,11 @@
-body {
+.body_index {
   font-family: Arial, sans-serif;
   background-color: #fafafa;
   margin: 0;
   padding: 0;
 }
 
-header {
+.header_index {
   background-color: #fff;
   border-bottom: 1px solid #dbdbdb;
   padding: 10px 0;
@@ -113,7 +113,7 @@ main {
 
 /* --ユーザー新規登録------ */
 
-body {
+.body_registration {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #fafafa;
   margin: 0;
@@ -201,7 +201,7 @@ h3 {
 
 /* --ログインページ------ */
 
-body {
+.body_session {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #fafafa;
   margin: 0;
