@@ -89,7 +89,7 @@
 | ------------------ | ------------ | ------------------------------------------------ |
 | post_text          | text         | null: false,                                     |
 | category_id        | integer      | null: false,                                     |
-| visibility         | integer      | null: false, default: 0                          |
+| visibility_id      | integer      | null: false, default: 0                          |
 <!-- | created_at         | datetime     | null: false, default: -> { 'CURRENT_TIMESTAMP' } | -->
 | user_id            | references   | null: false, foreign_key:true                    |
 

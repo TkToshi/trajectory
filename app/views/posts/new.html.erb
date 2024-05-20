@@ -17,6 +17,10 @@
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
         </div>
 
+         <div class="field">
+          <%= f.collection_select(:visibility_id, Visibility.all, :id, :name, {}, {class:"select-box", id:"visibility"}) %>
+        </div>
+
         <div class="actions">
           <%= f.submit "Post", class: "post-button" %>
         </div>
