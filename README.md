@@ -57,6 +57,22 @@
 | nickname              | string  | null: false, unique: true |
 | email                 | string  | null: false, unique: true |
 | encrypted_password    | string  | null: false,              |
+
+
+### Association
+
+- has_one  : point 
+- has_one  : profile 
+- has_many : posts 
+- has_many : likes 
+- has_many : relationships 
+- has_many : followers, through: :relationships 
+- has_many : followings, through: :relationships 
+
+## profileテーブル
+
+| Column                | Type    | Options                   |
+| ------------------    | ------  | ------------------------- |
 | gender_id             | integer | null: false,              |
 | user_profile          | text    | null: false,              |
 | user_follower_figure  | integer | null: false,              |
@@ -65,12 +81,8 @@
 
 ### Association
 
-- has_one  : point 
-- has_many : posts 
-- has_many : likes 
-- has_many : relationships 
-- has_many : followers, through: :relationships 
-- has_many : followings, through: :relationships 
+- belongs_to : user
+
 
 ## postsテーブル
 | Column             | Type         | Options                                          |
@@ -83,9 +95,9 @@
 
 ### Association
 
-- belongs_to : user*
-- has_many   : likes*
-- has_many   : comments*
+- belongs_to : user
+- has_many   : likes
+- has_many   : comments
 
 ## commentsテーブル
 | Column             | Type         | Options                            |
@@ -123,7 +135,7 @@
 ## pointsテーブル
 | Column             | Type         | Options                            |
 | ------------------ | ------------ | ---------------------------------- |
-| point              | integer      | null: false,                       |
+| point_figure       | integer      | null: false,                       |
 | user_id            | references   | null: false, foreign_key:true      |
 
 ### Association

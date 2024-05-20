@@ -279,3 +279,80 @@ h3 {
   margin-top: 20px;
   font-size: 14px;
 }
+
+
+/* 新規登録ページ */
+
+.body_new {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.new-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.new-post-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.field input[type="file"],
+.field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.post-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.post-button:hover {
+  background-color: #287bb5;
+  border-color: #287bb5;
+}
