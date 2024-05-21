@@ -357,3 +357,290 @@ h2 {
   border-color: #287bb5;
 }
 
+/* プロフィールページ*/
+
+.body_profile {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container {
+  width: 100%;
+  max-width: 935px;
+  margin: 20px auto;
+  padding: 20px 20px 60px 20px;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  margin-right: 30px;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-username {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #262626;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-stats span {
+  font-size: 16px;
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: #333;
+}
+
+.profile-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.profile-post {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+.profile-post img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit_btn {
+  text-decoration: none;
+  color: #262626;
+}
+
+.post_text {
+  position: absolute;
+  top: 600;
+  left: 0;
+  width: 100%;
+  height: 30%;
+ }
+
+/********** プロフィール登録ページ*********/
+
+.body_register {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.register-profile-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.field_register {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field_register label {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.field_register input[type="file"],
+.field_register input[type="text"],
+.field_register textarea,
+.field_register select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.current-avatar {
+  margin-top: 10px;
+}
+
+.current-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.actions_register {
+  margin-top: 20px;
+}
+
+.save-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-button:hover {
+  background-color: #287bb5;
+  border-color: #287bb5;
+}
+
+
+
+/* プロフィール編集ページ*/
+.body_edit {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.edit-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.edit-profile-box {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.field_edit {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field_edit label {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.field_edit input[type="file"],
+.field_edit input[type="text"],
+.field_edit textarea,
+.field_edit select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.current-avatar {
+  margin-top: 10px;
+}
+
+.current-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.actions_register {
+  margin-top: 20px;
+}
+
+.save-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-button:hover {
+  background-color: #287bb5;
+  border-color: #287bb5;
+}

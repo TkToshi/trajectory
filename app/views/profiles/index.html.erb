@@ -1,0 +1,47 @@
+<body class="body_profile">
+  <div class="profile-container">
+    <header class="profile-header">
+      <div class="profile-info">
+        <div class="profile-image">
+          <%# <%= image_tag @user.avatar_url, alt: @user.username %> 
+        </div>
+        <div class="profile-details">
+          <% @user.each do |user| %>
+          <%# <h1 class="profile-username"><%= user.nickname %></h1> 
+           <%= link_to user.nickname,  root_path , class:"profile-username"%> 
+          <% end %>
+          <div class="profile-stats">
+            <% @profile.each do |profile| %> 
+            <span>introduction<br />  
+            <strong><%= profile.user_profile %></strong></span> 
+            <span>gender<br />  
+            <strong><%= profile.gender.name %></strong></span> 
+            <%# <span><strong><%= "profile.user_follower_figure" %></strong> followers</span>  
+            <%# <span><strong><%= profile.user_following_figure %></strong> following</span> 
+            <%# <span><strong><%= profile.gender_id</strong> gender</span>  %> 
+             <div >
+               <%= link_to "register", new_profile_path(profile), class: :edit_btn %> 
+             </div> 
+             <div>
+               <%= link_to "edit",  edit_profile_path(profile.id), class: :edit_btn %> 
+             </div> 
+            <% end %> 
+          </div>
+        </div>
+       
+        
+      </div>
+    </header>
+    <div class="profile-posts">
+        <% @post.each do |post| %> 
+        <div class="profile-post">
+          <%= image_tag post.image%>
+        <div class="post_text">
+          <%= post.post_text%>
+        </div>
+        </div>
+ 
+        <% end %> 
+    </div>
+  </div>
+</body>
