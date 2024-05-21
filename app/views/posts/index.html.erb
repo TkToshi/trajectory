@@ -15,6 +15,7 @@
           <li><a href="#">Home</a></li>
           <li><%= link_to 'Profile', profiles_path %></li> 
           <li><%= link_to 'Newpost', new_post_path %></li> 
+
           <li><%= link_to 'logout', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
         </ul>
       </nav>
@@ -45,20 +46,27 @@
       </div>
 
       <aside class="sidebar">
+        <% @users.each do |user|%> 
+         
         <div class="profile-summary">
-          <img src="https://via.placeholder.com/60" alt="Profile avatar" class="avatar">
-          <span class="username">ユーザーネーム</span>
+          <% @profiles.each do |profile|%> 
+           <%= image_tag profile.profile_image, class: 'profile-image' if profile.profile_image.attached? %> 
+          <% end %>
+          <%# <img src="https://via.placeholder.com/60" alt="Profile avatar" class="avatar"> %>
+          <span class="username"><%= user.nickname %></span>
         </div>
          <div class="suggestions">
-          <h3>おすすめ</h3>
+          <h3>recommendation</h3>
           <div class="suggestion">
-            <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar">
+            <%# <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar"> %>
             <span class="username">User1</span>
           </div>
           <div class="suggestion">
-            <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar">
+            <%# <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar"> %>
             <span class="username">User2</span>
           </div> 
+         
+          <% end %>
           <!-- Add more suggestions as needed -->
         </div>
       </aside>

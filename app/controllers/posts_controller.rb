@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
 def index
   @posts = Post.all
+  @users = User.all
+  @profiles = Profile.all
 end
 
 def new

@@ -68,10 +68,17 @@ main {
   margin-right: 10px;
 }
 
+.user {
+background-color: #287bb5;
+height: 100px;
+width: 100px;
+}
+
 .post-image {
   width: 100%;
   display: block;
 }
+
 
 .like-button, .comment-button {
   background: none;
@@ -92,6 +99,17 @@ main {
   background-color: #fff;
   border: 1px solid #dbdbdb;
   margin-bottom: 20px;
+}
+
+.profile-image {
+  height: 50px;
+  width: 50px;
+}
+
+.username {
+  color: #262626;
+  font-size: 18px;
+
 }
 
 .suggestions {
