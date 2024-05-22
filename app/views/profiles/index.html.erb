@@ -3,15 +3,16 @@
     <header class="profile-header">
       <div class="profile-info">
         <div class="profile-image">
-          <%# <%= image_tag @user.avatar_url, alt: @user.username %> 
         </div>
         <div class="profile-details">
           <% @user.each do |user| %>
-          <%# <h1 class="profile-username"><%= user.nickname %></h1> 
+          <% if user_signed_in? && current_user.id == user.id  %>
            <%= link_to user.nickname,  root_path , class:"profile-username"%> 
+           <% end %>
           <% end %>
           <div class="profile-stats">
             <% @profile.each do |profile| %> 
+            <% if user_signed_in? && current_user.id == profile.user_id  %>
             <span>introduction<br />  
             <strong><%= profile.user_profile %></strong></span> 
             <span>gender<br />  
@@ -25,6 +26,7 @@
              <div>
                <%= link_to "edit",  edit_profile_path(profile.id), class: :edit_btn %> 
              </div> 
+             <% end %>
             <% end %> 
           </div>
         </div>
@@ -34,13 +36,14 @@
     </header>
     <div class="profile-posts">
         <% @post.each do |post| %> 
+        <% if user_signed_in? && current_user.id == post.user_id  %>
         <div class="profile-post">
           <%= image_tag post.image%>
         <div class="post_text">
           <%= post.post_text%>
         </div>
         </div>
- 
+        <% end %> 
         <% end %> 
     </div>
   </div>

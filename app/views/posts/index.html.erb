@@ -11,9 +11,7 @@
     <div class="container">
       <h1 class="logo">Trajectory</h1>
       <nav>
-        <ul>
-         
-          <li><a href="#">Home</a></li>
+        <ul class="menu">
           <li><%= link_to 'Profile', profiles_path %></li> 
           <li><%= link_to 'Newpost', new_post_path %></li> 
           <li><%= link_to 'logout', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li>
@@ -29,19 +27,18 @@
          <% @posts.each do |post|%> 
         <div class="post">
           <div class="post-header">
-            <%# <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar">%>
-            <span class="username">User1</span>
+
+            <span class="username"><%=post.user.nickname%></span>
+
              <span><%= link_to 'Edit_post', edit_post_path(post.id),class:"edit-post" %></span>
           </div>
            <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
-          <%#<img src="https://via.placeholder.com/600" alt="Post image" class="post-image">%>
           <div class="post-footer">
             <button class="like-button">Like</button>
             <button class="comment-button">Comment</button>
             <div class="post-text">
             <%= post.post_text %>
             </div>
-           
           </div>
         </div>
         <% end %>
@@ -49,15 +46,21 @@
       </div>
 
       <aside class="sidebar">
-        <% @users.each do |user|%> 
-         
+        
         <div class="profile-summary">
           <% @profiles.each do |profile|%> 
+          <% if user_signed_in? && current_user.id == profile.user_id  %>
            <%= image_tag profile.profile_image, class: 'profile-image' if profile.profile_image.attached? %> 
+           <% end %>
           <% end %>
-          <%# <img src="https://via.placeholder.com/60" alt="Profile avatar" class="avatar"> %>
+          <% @users.each do |user|%> 
+          <% if user_signed_in? && current_user.id == user.id  %>
           <span class="username"><%= user.nickname %></span>
+          <% end %>
+          <% end %>
         </div>
+          
+        
          <div class="suggestions">
           <h3>recommendation</h3>
           <div class="suggestion">
@@ -69,7 +72,7 @@
             <span class="username">User2</span>
           </div> 
          
-          <% end %>
+
           <!-- Add more suggestions as needed -->
         </div>
       </aside>
