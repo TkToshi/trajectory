@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :posts, only: [:index, :new, :create, :edit, :update]
   resources :profiles, only: [:index, :new, :create, :edit, :update]
+  resources :reletionships, only: [:create, :destroy]
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+  end
 end

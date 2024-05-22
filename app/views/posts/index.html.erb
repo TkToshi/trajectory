@@ -64,14 +64,21 @@
          <div class="suggestions">
           <h3>recommendation</h3>
           <div class="suggestion">
-            <%# <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar"> %>
-            <span class="username">User1</span>
+            <% @users.each do |user|%> 
+            <% if current_user != user %>
+            <span class="username"><%=user.nickname %></span>
+            <% end %>
+            <% end %>
+            <% @users.each do |user|%> 
+            <% if current_user != user %>
+             <% if user.followed_by?(current_user) %>
+            <%=link_to "フォロー中", user_relationships_path(user.id),class: "following_btn", data: { turbo_method: :delete } %>
+            <% else %>
+           <%=link_to "フォローする", user_relationships_path(user.id),class: "followed_btn", data: { turbo_method: :post } %>
+           <% end %>
+            <% end %>
+           <% end %>
           </div>
-          <div class="suggestion">
-            <%# <img src="https://via.placeholder.com/40" alt="User avatar" class="avatar"> %>
-            <span class="username">User2</span>
-          </div> 
-         
 
           <!-- Add more suggestions as needed -->
         </div>
