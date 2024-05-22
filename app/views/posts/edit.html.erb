@@ -1,0 +1,30 @@
+<body class= "body_new">
+  <div class="new-post-container">
+    <div class="new-post-box">
+      <h2>Edit Post</h2>
+      <%= form_for @post, html: { multipart: true } do |f| %>
+        <div class="field">
+          <%= f.label :image, "Upload Image" %><br />
+          <%= f.file_field :image %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :post_text, "Caption" %><br />
+          <%= f.text_area :post_text, rows: 3 %>
+        </div>
+
+         <div class="field">
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+        </div>
+
+         <div class="field">
+          <%= f.collection_select(:visibility_id, Visibility.all, :id, :name, {}, {class:"select-box", id:"visibility"}) %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Post", class: "post-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

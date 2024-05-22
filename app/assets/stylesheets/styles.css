@@ -109,8 +109,15 @@ width: 100px;
 .username {
   color: #262626;
   font-size: 18px;
-
 }
+
+.edit-post {
+  color: #262626;
+  font-size: 16px;
+  margin-left: 550%;
+  text-decoration: none;
+}
+
 
 .suggestions {
   background-color: #fff;
