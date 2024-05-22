@@ -17,9 +17,15 @@
             <strong><%= profile.user_profile %></strong></span> 
             <span>gender<br />  
             <strong><%= profile.gender.name %></strong></span> 
-            <%# <span><strong><%= "profile.user_follower_figure" %></strong> followers</span>  
-            <%# <span><strong><%= profile.user_following_figure %></strong> following</span> 
-            <%# <span><strong><%= profile.gender_id</strong> gender</span>  %> 
+
+            <% @user .each do |user | %>
+            <% if current_user != user %>
+             <span>following <br /> 
+            <%= user.followers.count %></span> 
+            <span> followers<br /> 
+            <%= user.followings.count %></span> 
+            <% end %>
+            <% end %>
              <div >
                <%= link_to "register", new_profile_path(profile), class: :edit_btn %> 
              </div> 
