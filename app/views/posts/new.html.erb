@@ -21,9 +21,12 @@
           <%= f.collection_select(:visibility_id, Visibility.all, :id, :name, {}, {class:"select-box", id:"visibility"}) %>
         </div>
 
-        <div class="actions">
+        <div class="cancel-button ">
           <%= f.submit "Post", class: "post-button" %>
         </div>
+
+        <%= link_to "Back", :back , class: "back-button" %>
+
       <% end %>
     </div>
   </div>

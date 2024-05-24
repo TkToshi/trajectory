@@ -52,17 +52,21 @@
                 <% end %>
                <% end %>
               <% end  %>
-
+              <% if user_signed_in? %>
+              <% unless current_user.profile %>
              <div >
-               <strong><%= link_to "register", new_profile_path(@profile), class: :edit_btn%></strong>
+               <strong><%= link_to "register", new_profile_path, class: :edit_btn%></strong>
              </div>
-
+              <% end %>
+              <% end %>
+             <% @profile.each do |profile| %>
+            <% if user_signed_in? && current_user.id == profile.user_id  %>
              <div>
-               <strong><%= link_to "edit",  edit_profile_path(@profile), class: :edit_btn%></strong>
+               <strong><%= link_to "edit",  edit_profile_path(profile), class: :edit_btn%></strong>
              </div>
-            
-             
-              
+            <% end  %>
+             <% end  %>
+              <strong><%= link_to "Back", :back, class: "profile-back-button" %></strong>
           </div>
         </div>
       </div>

@@ -179,6 +179,21 @@ margin-right: 20px;
   margin-bottom: 10px;
 }
 
+.cancel-button {
+  margin: 20px 0;
+  text-decoration: none;
+  color: red;
+}
+
+.back-button {
+  text-decoration: none;
+  color: blue;
+}
+.profile-back-button {
+  text-decoration: none;
+  color: #262626;
+}
+
 /* --ユーザー新規登録------ */
 
 .body_registration {

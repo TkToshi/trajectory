@@ -18,9 +18,12 @@
           <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"gender"}) %>
         </div>
 
-        <div class="actions_register">
+        <div class="cancel-button">
           <%= f.submit "Save Changes", class: "save-button" %>
         </div>
+
+        <%= link_to "Back", :back, class: "back-button" %>
+
        <% end %>
     </div>
   </div>

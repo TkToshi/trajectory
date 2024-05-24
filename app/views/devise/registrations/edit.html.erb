@@ -35,13 +35,13 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" , class: "post-button"%>
   </div>
 <% end %>
 
-<div > <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete,class: "delete-button" %></div>
+<div > <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete,class: "cancel-button" %></div>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: "back-button" %>
 
     </div>
   </div>
