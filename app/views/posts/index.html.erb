@@ -27,6 +27,7 @@
       <div class="feed">
          <% @posts.each do |post|%> 
         <div class="post">
+          <% if post.visibility_id == 3 %>
           <div class="post-header">
 
             <span class="username"><%=post.user.nickname%></span>
@@ -42,6 +43,7 @@
             <%= post.post_text %>
             </div>
           </div>
+           <% end %>
         </div>
         <% end %>
         <!-- Add more posts as needed -->
