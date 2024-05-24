@@ -2,8 +2,7 @@ class ProfilesController < ApplicationController
   before_action :profile_params, only: [:create, :update]
   before_action :authenticate_user!
 
-
-  def index 
+  def index
     @user = User.all
     @profile = Profile.all
     @post = Post.all
@@ -38,8 +37,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:user_profile, :gender_id, :profile_image, :user_follower_figure, :user_following_figure).merge(user_id: current_user.id)
+    params.require(:profile).permit(:user_profile, :gender_id, :profile_image, :user_follower_figure,
+                                    :user_following_figure).merge(user_id: current_user.id)
   end
-
-
 end

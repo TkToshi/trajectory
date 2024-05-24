@@ -37,8 +37,6 @@
 
            <%= render partial: "likes/like", locals: { post: post } %>
 
-            <%# <button class="like-button">Like</button> %>
-            <%# <button class="comment-button">Comment</button> %>
             <div class="post-text">
             <%= post.post_text %>
             </div>
@@ -51,36 +49,54 @@
       <aside class="sidebar">
         
         <div class="profile-summary">
+          <div class="profile-names">
+          <h3>username</h3>
+          </div>
+          <div class= "myprofile">
+          <div class="profile-userimage">
           <% @profiles.each do |profile|%> 
           <% if user_signed_in? && current_user.id == profile.user_id  %>
            <%= image_tag profile.profile_image, class: 'profile-image' if profile.profile_image.attached? %> 
            <% end %>
+        </div>
+        <div class="profile-username">
           <% end %>
           <% @users.each do |user|%> 
           <% if user_signed_in? && current_user.id == user.id  %>
           <span class="username"><%= user.nickname %></span>
           <% end %>
           <% end %>
+          </div>
+          </div>
         </div>
           
-        
          <div class="suggestions">
           <h3>recommendation</h3>
           <div class="suggestion">
+             <div>
             <% @users.each do |user|%> 
+           <div>
             <% if current_user != user %>
             <span class="username"><%=user.nickname %></span>
             <% end %>
+          </div>
             <% end %>
+              </div>
+          <div>
             <% @users.each do |user|%> 
+          <div>
             <% if current_user != user %>
+           
              <% if user.followed_by?(current_user) %>
             <%=link_to "フォロー中", user_relationships_path(user.id),class: "following_btn", data: { turbo_method: :delete } %>
             <% else %>
            <%=link_to "フォローする", user_relationships_path(user.id),class: "followed_btn", data: { turbo_method: :post } %>
            <% end %>
+ 
             <% end %>
+            </div>
            <% end %>
+         </div>
           </div>
 
           <!-- Add more suggestions as needed -->

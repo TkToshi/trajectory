@@ -1,7 +1,11 @@
-<div id="like-btn<%= post.id %>">
+ 
+  <div id="like-btn<%= post.id %>">
+  <%= turbo_frame_tag dom_id(post, :like) do %>
   <% if user_signed_in? && post.liked_by?(current_user)%>
   <%=link_to "liked", post_likes_path(post.id),  data: { turbo_method: :delete }, class: "post_liked", remote: true %>
   <% else %>
   <%=link_to "like", post_likes_path(post.id), data: { turbo_method: :post }, class: "post_likes", remote: true %>
   <% end %>
+  <% end %>
   </div>
+ 

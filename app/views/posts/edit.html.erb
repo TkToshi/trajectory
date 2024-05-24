@@ -9,7 +9,7 @@
         </div>
         
         <div class="field">
-          <%= f.label :post_text, "Caption" %><br />
+          <%= f.label :post_text, "Caption（up to 40 characters）" %><br />
           <%= f.text_area :post_text, rows: 3 %>
         </div>
 
@@ -23,6 +23,9 @@
 
         <div class="actions">
           <%= f.submit "Post", class: "post-button" %>
+        </div>
+        <div class="actions">
+          <%= link_to "Delete", post_path(@post), data: { turbo_method: :delete }, class: "delete-button" %>
         </div>
       <% end %>
     </div>

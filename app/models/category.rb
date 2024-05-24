@@ -4,7 +4,7 @@ class Category < ActiveHash::Base
     { id: 2, name: 'useal' },
     { id: 3, name: 'mountain' },
     { id: 4, name: 'ocearn' },
-    { id: 5, name: 'sightseeing' },
+    { id: 5, name: 'sightseeing' }
 
   ]
 
