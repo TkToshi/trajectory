@@ -49,8 +49,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-   <<: *default
-  adapter: mysql2
+  <<: *default
   database: trajectory_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
