@@ -39,6 +39,12 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @q = Post.ransack(params[:q])
+    @posts = @q.result
+    @post = Post.all
+  end
+
   private
 
   def post_params

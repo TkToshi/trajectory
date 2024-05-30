@@ -576,6 +576,32 @@ h2 {
   font-size: 14px;
  }
 
+/********** 検索ページ*********/
+
+.search_page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: blue;
+}
+
+.search-field {
+ display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+
+
 /********** プロフィール登録ページ*********/
 
 .body_register {
