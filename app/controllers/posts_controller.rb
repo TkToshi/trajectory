@@ -42,7 +42,6 @@ class PostsController < ApplicationController
   def search
     @q = Post.ransack(params[:q])
     @posts = @q.result
-    @post = Post.all
   end
 
   private
