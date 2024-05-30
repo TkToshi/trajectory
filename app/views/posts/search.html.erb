@@ -4,39 +4,39 @@
 
 <div class='serch-contents' id="detailed-search-result-wrapper">
   <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
- <div class="search-field">
-    <div>
-     <strong> <%= f.label :category_id_in, 'カテゴリ' %></strong>
-    </div>
-    <div>
-      <%= f.collection_check_boxes(:category_id_in, Category.where(id: 2..5), :id, :name) %>
-    </div>
-    <div>
-    <%= f.submit 'search' %>
-    </div>
+    <div class="search-field">
+      <div>
+        <strong><%= f.label :category_id_in, 'カテゴリ' %></strong>
+      </div>
+      <div>
+        <%= f.collection_check_boxes(:category_id_in, Category.where(id: 2..5), :id, :name) %>
+      </div>
+      <div>
+        <%= f.submit 'search' %>
+      </div>
   <% end %>
-  <div>
-  <h3><%= link_to 'back', root_path,class: "search_back"%></h3>
-</div>
-  </div>
+      <div>
+        <h3><%= link_to 'back', root_path,class: "search_back"%></h3>
+      </div>
+    </div>
   
   <div class="profile-container">
-  <div class="profile-details">
-  <ul class='profile-posts' id="detailed-search-result">
-    <% @posts.each do |post| %> 
-        <% if user_signed_in? && current_user.id == post.user_id  %>
-        <div class="profile-post">
-          <%= image_tag post.image%>
-          <% if post.visibility_id == 2%>
-          <i class="fa-solid fa-lock icon-overlay"></i>
-          <% end %>
-        <div class="post_text">
-          <%= post.post_text%>
-        </div>
-        </div>
+    <div class="profile-details">
+      <ul class='profile-posts' id="detailed-search-result">
+        <% @posts.each do |post| %> 
+          <% if user_signed_in? && current_user.id == post.user_id  %>
+            <div class="profile-post">
+              <%= image_tag post.image%>
+              <% if post.visibility_id == 2%>
+              <i class="fa-solid fa-lock icon-overlay"></i>
+              <% end %>
+              <div class="post_text">
+                <%= post.post_text%>
+              </div>
+            </div>
+          <% end %> 
         <% end %> 
-        <% end %> 
-  </ul>
-  </div>
+      </ul>
+    </div>
   </div>
 </div>

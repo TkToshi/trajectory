@@ -2,98 +2,91 @@
   <div class="profile-container">
     <header class="profile-header">
       <div class="profile-info">
-         <div class="profile-image"> 
-         </div> 
-         <div class="profile-details">
-           <% @user.each do |user| %>
-             <% if user_signed_in? && current_user.id == user.id  %>
-               <%= link_to user.nickname,  root_path , class:"profile-username"%> 
-             <% end %>
-           <% end %>
+        <div class="profile-image"> 
+        </div> 
+        <div class="profile-details">
+          <% @user.each do |user| %>
+            <% if user_signed_in? && current_user.id == user.id  %>
+              <%= link_to user.nickname,  root_path , class:"profile-username"%> 
+            <% end %>
+          <% end %>
            
-           <div class="profile-stats">
-              
-             <% @profile.each do |profile| %>
-           
-                <% if user_signed_in? && current_user.id == profile.user_id  %>
-                
+          <div class="profile-stats"> 
+            <% @profile.each do |profile| %>
+              <% if user_signed_in? && current_user.id == profile.user_id  %>
                 <div class="profile-item">
                   <span><strong>introduction </strong></span>
                     <div class="profile-inrtoduction">
-                      
                       <%= profile.user_profile %>
                     </div> 
                 </div> 
-
                 <div class="profile-item">
                   <span><strong>gender</strong></span> 
                     <div class="profile-items">
                       <span><%= profile.gender.name%></span> 
                     </div> 
-                </div>
-
-                <% @user.each do |user| %>
-                  <% if current_user == user  %>
-                <div class="profile-item">
-                 
+                  </div>
+                    <% @user.each do |user| %>
+                      <% if current_user == user  %>
+                  <div class="profile-item">
                       <span><strong>followers</strong></span> 
-                    <div class="profile-items">
-                      <span><%= current_user.followers.count%></span>  
-                    </div>
-                </div>
-
-                <div class="profile-item">
-                  <span><strong>following</strong></span>
-                    <div class="profile-items">
-                      <span><%= current_user.followings.count%></span>
-                    </div>
-                </div>
-                  <% end %>
-                <% end %>
-               <% end %>
-              <% end  %>
-              <% if user_signed_in? %>
-              <% unless current_user.profile %>
-             <div >
-               <strong><%= link_to "register", new_profile_path, class: :edit_btn%></strong>
-             </div>
+                      <div class="profile-items">
+                        <span><%= current_user.followers.count%></span>  
+                      </div>
+                  </div>
+                  <div class="profile-item">
+                    <span><strong>following</strong></span>
+                      <div class="profile-items">
+                        <span><%= current_user.followings.count%></span>
+                      </div>
+                  </div>
+                      <% end %>
+                    <% end %>
               <% end %>
-              <% end %>
-             <% @profile.each do |profile| %>
-            <% if user_signed_in? && current_user.id == profile.user_id  %>
-             <div>
-               <strong><%= link_to "edit",  edit_profile_path(profile), class: :edit_btn%></strong>
-             </div>
             <% end  %>
-             <% end  %>
-              <strong><%= link_to "Back", :back, class: "profile-back-button" %></strong>
-              <div class = "search">
-                <%= link_to search_posts_path do%>
-                  <i class="fa-solid fa-magnifying-glass"></i>
+          
+              <% if user_signed_in? %>
+                <% unless current_user.profile %>
+                <div >
+                  <strong><%= link_to "register", new_profile_path, class: :edit_btn%></strong>
+                </div>
                 <% end %>
-              </div>
+              <% end %>
+             
+              <% @profile.each do |profile| %>
+                <% if user_signed_in? && current_user.id == profile.user_id  %>
+                  <div>
+                    <strong><%= link_to "edit",  edit_profile_path(profile), class: :edit_btn%></strong>
+                  </div>
+                <% end  %>
+              <% end  %>
+                <strong><%= link_to "Back", root_path, class: "profile-back-button" %></strong>
+                <div class = "search">
+                  <%= link_to search_posts_path do%>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <% end %>
+                </div>
           </div>
         </div>
       </div>
     </header>
     
     <div class="profile-posts">
-        <% @post.each do |post| %> 
+      <% @post.each do |post| %> 
         <% if user_signed_in? && current_user.id == post.user_id  %>
         <div class="profile-post">
-          <%= link_to  edit_post_path(post.id) do%>
-          <%= image_tag post.image%>
-          <% end %>
+            <%= link_to  edit_post_path(post.id) do%>
+            <%= image_tag post.image%>
+            <% end %>
           <% if post.visibility_id == 2%>
-          <i class="fa-solid fa-lock icon-overlay"></i>
+            <i class="fa-solid fa-lock icon-overlay"></i>
           <% end %>
-        <div class="post_text">
-          <%= post.post_text%>
-        </div>
+          <div class="post_text">
+            <%= post.post_text%>
+          </div>
         </div>
         <% end %> 
-        <% end %> 
+      <% end %> 
     </div>
-
   </div>
 </body>

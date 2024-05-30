@@ -8,6 +8,7 @@
   
   <script src="/assets/index.js"></script>
 </head>
+
 <body class="body">
   <header class="header_index">
     <div class="container">
@@ -25,90 +26,79 @@
 
   <main>
     <div class="container">
-      <div class="feed">
-         <% @posts.each do |post|%> 
-        <div class="post">
-          <% if post.visibility_id == 3 %>
-          <div class="post-header">
-
-            <span class="username"><%=post.user.nickname%></span>
-
-             <span id="edit_post"><%= link_to 'Edit_post', edit_post_path(post.id),class:"edit-post"%></span>
-          </div>
-           <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
-          <div class="post-footer">
-
-            
-             <%= render partial: "likes/like", locals: { post: post } %>
-             <div class="likes-count", id = "like-count">
-             <%= post.likes.count %>
+        <div class="feed">
+          <% @posts.each do |post|%> 
+          <div class="post">
+            <% if post.visibility_id == 3 %>
+            <div class="post-header">
+              <span class="username"><%=post.user.nickname%></span>
+              <span id="edit_post"><%= link_to 'Edit_post', edit_post_path(post.id),class:"edit-post"%></span>
             </div>
-
-            <div class="post-text">
-            <%= post.post_text %>
+              <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+            <div class="post-footer">
+              <%= render partial: "likes/like", locals: { post: post } %>
+              <div class="likes-count", id = "like-count">
+                <%= post.likes.count %>
+              </div>
+              <div class="post-text">
+              <%= post.post_text %>
+              </div>
             </div>
+            <% end %>
           </div>
-           <% end %>
+          <% end %>
         </div>
-        <% end %>
-        <!-- Add more posts as needed -->
-      </div>
-
 
       <aside class="sidebar">
-        
         <div class="profile-summary">
           <div class="profile-names">
-          <h3>username</h3>
+            <h3>username</h3>
           </div>
           <div class= "myprofile">
-          <div class="profile-userimage">
-          <% @profiles.each do |profile|%> 
-          <% if user_signed_in? && current_user.id == profile.user_id  %>
-           <%= image_tag profile.profile_image, class: 'profile-image' if profile.profile_image.attached? %> 
-           <% end %>
-        </div>
-        <div class="profile-username">
-          <% end %>
-          <% @users.each do |user|%> 
-          <% if user_signed_in? && current_user.id == user.id  %>
-          <span class="username"><%= user.nickname %></span>
-          <% end %>
-          <% end %>
-          </div>
+            <div class="profile-userimage">
+              <% @profiles.each do |profile|%> 
+                <% if user_signed_in? && current_user.id == profile.user_id  %>
+                 <%= image_tag profile.profile_image, class: 'profile-image' if profile.profile_image.attached? %> 
+                <% end %>
+              <% end %>
+            </div>
+            <div class="profile-username">
+          
+              <% @users.each do |user|%> 
+                <% if user_signed_in? && current_user.id == user.id  %>
+                  <span class="username"><%= user.nickname %></span>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
           
-         <div class="suggestions">
+        <div class="suggestions">
           <h3>recommendation</h3>
-          <div class="suggestion">
-             <div>
-            <% @users.each do |user|%> 
-           <div>
-            <% if current_user != user %>
-            <span class="username"><%=user.nickname %></span>
-            <% end %>
-          </div>
-            <% end %>
+            <div class="suggestion">
+              <div>
+                <% @users.each do |user|%> 
+                  <div>
+                    <% if current_user != user %>
+                    <span class="username"><%=user.nickname %></span>
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
-          <div>
-            <% @users.each do |user|%> 
-          <div>
-            <% if current_user != user %>
-           
-             <% if user.followed_by?(current_user) %>
-            <%=link_to "フォロー中", user_relationships_path(user.id),class: "following_btn", data: { turbo_method: :delete } %>
-            <% else %>
-           <%=link_to "フォローする", user_relationships_path(user.id),class: "followed_btn", data: { turbo_method: :post } %>
-           <% end %>
- 
-            <% end %>
+              <div>
+                <% @users.each do |user|%> 
+                  <div>
+                    <% if current_user != user %>
+                      <% if user.followed_by?(current_user) %>
+                        <%=link_to "following", user_relationships_path(user.id),class: "following_btn", data: { turbo_method: :delete } %>
+                      <% else %>
+                        <%=link_to "follow", user_relationships_path(user.id),class: "followed_btn", data: { turbo_method: :post } %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             </div>
-           <% end %>
-         </div>
-          </div>
-
-          <!-- Add more suggestions as needed -->
         </div>
       </aside>
     </div>
