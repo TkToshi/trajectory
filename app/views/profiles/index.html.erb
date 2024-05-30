@@ -81,7 +81,9 @@
         <% @post.each do |post| %> 
         <% if user_signed_in? && current_user.id == post.user_id  %>
         <div class="profile-post">
+          <%= link_to  edit_post_path(post.id) do%>
           <%= image_tag post.image%>
+          <% end %>
           <% if post.visibility_id == 2%>
           <i class="fa-solid fa-lock icon-overlay"></i>
           <% end %>
