@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :profiles, only: [:index, :new, :create, :edit, :update, :destroy] 
+  resources :profiles, only: [:index, :new, :create, :edit, :update, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :reletionships, only: [:create, :destroy]
   resources :users do
