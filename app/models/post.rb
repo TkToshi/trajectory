@@ -14,11 +14,11 @@ class Post < ApplicationRecord
   belongs_to :visibility
 
   def self.ransackable_attributes(auth_object = nil)
-    ["post_text", "created_at", "updated_at", "visibility_id", "category_id"]
+    %w[visibility_id category_id]
   end
-
+  
   def self.ransackable_associations(auth_object = nil)
-    ["user", "likes"]
+    %w[user likes]
   end
 
 end
