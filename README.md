@@ -35,6 +35,8 @@
 * いいね！機能
 * フォロー機能
 * 画像投稿機能
+* [![Image from Gyazo](https://i.gyazo.com/be13694d559281710efb97d795e392b4.png)](https://gyazo.com/be13694d559281710efb97d795e392b4)
+* [![Image from Gyazo](https://i.gyazo.com/a73f2d71a53da8a15eb3595f710e7dbd.png)](https://gyazo.com/a73f2d71a53da8a15eb3595f710e7dbd)
 
 # 実装予定の機能
 * 地図閲覧機能
