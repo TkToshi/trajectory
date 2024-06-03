@@ -34,14 +34,19 @@
 https://i.gyazo.com/e59ee6d3897a0febda23841df76ffd63.gif
 
 * 画像投稿機能
-
+https://i.gyazo.com/b6d1b440d1b4e327622080a01a18d666.gif
 
 * いいね！機能
-
+https://i.gyazo.com/f4c8b24c2ec7dd51746cb69b2bfad079.gif
 
 * フォロー機能
+https://i.gyazo.com/0ffb1e8b9c279b2638371d5b1ae223b4.gif
 
+* 検索機能
+https://i.gyazo.com/ae955499b594d9db539f22b252afbb6f.gif
 
+* 画像投稿一覧表示機能
+https://i.gyazo.com/11579543721ee6d8ff25777ed8b9066f.gif
 
 # 実装予定の機能
 * 地図閲覧機能
