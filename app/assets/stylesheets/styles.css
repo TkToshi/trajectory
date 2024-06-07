@@ -78,6 +78,10 @@ main {
   margin-right: 10px;
 }
 
+.post-header {
+ justify-content: space-between;
+}
+
 .post-text{
   margin-left: 10px;
 }
@@ -145,11 +149,6 @@ margin-right: 20px;
   width: 50px;
 }
 
-.username {
-  color: #262626;
-  font-size: 18px;
-}
-
 .following_btn {
   color: blue;
   font-size: 16px;
@@ -164,10 +163,16 @@ margin-right: 20px;
   margin-left: 20px;
 }
 
+
+
+.username {
+  color: #262626;
+  font-size: 18px;
+}
+
 .edit-post {
   color: #262626;
   font-size: 16px;
-  margin-left: 550%;
   text-decoration: none;
 }
 

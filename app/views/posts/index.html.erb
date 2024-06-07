@@ -30,9 +30,13 @@
           <div class="post">
             <% if post.visibility_id == 3 %>
             <div class="post-header">
+              <div class="header-username">
               <span class="username"><%=post.user.nickname%></span>
+              </div>
               <% if user_signed_in? && current_user.id == post.id  %>
+              <div class="header_edit_post">
               <span id="edit_post"><%= link_to 'Edit_post', edit_post_path(post.id),class:"edit-post"%></span>
+              </div>
               <% end %>
             </div>
               <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
