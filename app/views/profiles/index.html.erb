@@ -1,4 +1,3 @@
-
 <body class="body_profile">
   <div class="profile-container">
     <header class="profile-header">
@@ -84,21 +83,10 @@
           <% end %>
           <div class="post_text">
             
-            <% @posts.each do |post| %> 
-            <% if user_signed_in? && current_user.id == post.id  %>
-            <button id="showPopupButton" data-post-id="<%= post.id %>"><i class="fa-solid fa-earth-asia"></i></button>
-            <% end %>
-              <script>
-              window.MyApp = window.MyApp || {};
-              
-              window.MyApp.postLatitude = <%= post.latitude.to_f %>;
-              window.MyApp.postLongitude = <%= post.longitude.to_f %>;
-               
-              console.log("Post ID:", <%= post.id %>);
-              console.log("Latitude:", window.MyApp.postLatitude);
-              console.log("Longitude:", window.MyApp.postLongitude);
-              </script>
-            <% end %>
+            <button class="showPopupButton" data-post-id="<%= post.id %>" data-latitude="<%= post.latitude %>" data-longitude="<%= post.longitude %>">
+              <i class="fa-solid fa-earth-asia"></i>
+            </button>
+            <!-- 修正・追記箇所: data-post-id, data-latitude, data-longitude 属性を追加 -->
 
             <%= post.post_text%>
           </div>

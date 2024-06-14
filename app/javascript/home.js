@@ -1,73 +1,69 @@
 //= require posts
 
 document.addEventListener('DOMContentLoaded', function() {
-  var showPopupButton = document.getElementById('showPopupButton');
-  document.getElementById('showPopupButton').addEventListener('click', function() {
+  // 全てのポップアップボタンにクリックイベントを追加
+  document.querySelectorAll('.showPopupButton').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+          // ポストID、緯度、経度を取得
+          var postId = event.target.dataset.postId; // 修正・追記箇所
+          console.log('Post ID:', postId);
+          var latitude = event.target.dataset.latitude; // 修正・追記箇所
+          console.log('Latitude:', latitude);
+          var longitude = event.target.dataset.longitude; // 修正・追記箇所
+          console.log('Longitude:', longitude);
 
+          // ポップアップウィンドウのサイズを設定
+          var width = 400;
+          var height = 300;
+          var left = (screen.width - width) / 2;
+          var top = (screen.height - height) / 2;
 
-    
-      // ポップアップウィンドウのサイズを設定
-      var width = 400;
-      var height = 300;
-      var left = (screen.width - width) / 2;
-      var top = (screen.height - height) / 2;
+          // ポップアップウィンドウを開く
+          var popup = window.open('', 'popupWindow', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
 
-      // ポップアップウィンドウを開く
-      var popup = window.open('', 'popupWindow', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+          // ポップアップウィンドウにコンテンツを追加
+          popup.document.write(`
+              <!DOCTYPE html>
+              <html>
+              <head>
+                  <title>Popup Window</title>
+                  <style>
+                      #mapContainer {
+                          height: 100%;
+                          width: 100%;
+                      }
+                      html, body {
+                          height: 100%;
+                          margin: 0;
+                          padding: 0;
+                      }
+                  </style>
+                  <script>
+                      function initMap() {
+                          var postLatitude = parseFloat(${latitude}); // 修正・追記箇所
+                          var postLongitude = parseFloat(${longitude}); // 修正・追記箇所
 
-      // ポップアップウィンドウにコンテンツを追加
-      popup.document.write(`
-      <!DOCTYPE html>
-      <html>
-      <head>
-          <title>Popup Window</title>
-          <style>
-              #mapContainer  {
-                  height: 100%;
-                  width: 100%;
-              }
-              html, body {
-                  height: 100%;
-                  margin: 0;
-                  padding: 0;
-              }
-          </style>
-          <script>
+                          var mapOptions = {
+                              center: { lat: postLatitude, lng: postLongitude },
+                              zoom: 12
+                          };
+                          var mapInstance = new google.maps.Map(document.getElementById('mapContainer'), mapOptions);
 
-          function initMap() {
-            // ポップアップウィンドウで親ウィンドウの変数を使用
-            var latitude = parseFloat(window.opener.MyApp.postLatitude);
-            var longitude = parseFloat(window.opener.MyApp.postLongitude);
-        
-            if (isNaN(latitude) || isNaN(longitude)) {
-                console.error("Invalid latitude or longitude values.");
-                return;
-            }
-
-            console.log("Latitude in JS:", latitude);
-            console.log("Longitude in JS:", longitude);
-
-            var mapOptions = {
-                center: { lat: latitude, lng: longitude },
-                zoom: 12
-            };
-            var mapInstance = new google.maps.Map(document.getElementById('mapContainer'), mapOptions);
-
-            var marker = new google.maps.Marker({
-                position: { lat: latitude, lng: longitude },
-                map: mapInstance
-            });
-          }
-
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap" async defer></script>
-      </head>
-      <body>
-          <h2>Location Preview</h2>
-          <div id="mapContainer" style="height: 500px; width: 100%;"></div>
-      </body>
-      </html>
-  `);
-      popup.document.close();
+                          var marker = new google.maps.Marker({
+                              position: { lat: postLatitude, lng: postLongitude },
+                              map: mapInstance
+                          });
+                      }
+                  </script>
+                  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+              </head>
+              <body>
+                  <h2>Location Preview</h2>
+                  <div id="mapContainer"></div>
+              </body>
+              </html>
+          `);
+          popup.document.close();
+      });
   });
 });
