@@ -2,12 +2,20 @@
   <div class="new-post-container">
     <div class="new-post-box">
       <h2>New Post</h2>
-      <%= form_for @post, html: { multipart: true } do |f| %>
+      <%= form_with(model: @post, local: true) do |f| %>
         <div class="field">
           <%= f.label :image, "Upload Image" %><br />
           <%= f.file_field :image %>
         </div>
         
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, id: 'location_name' %>
+        </div>
+
+         <%= f.hidden_field :latitude %>
+         <%= f.hidden_field :longitude %>
+
         <div class="field">
           <%= f.label :post_text, "Caption（up to 40 characters）" %><br />
           <%= f.text_area :post_text, rows: 3 %>
@@ -29,5 +37,13 @@
 
       <% end %>
     </div>
+    <div class = preview>
+      <div class = preview_title>
+        <h2>Preview</h2>
+      </div>
+      <div id="map" style="height: 500px; width: 500px;" class = maps></div>
+    </div>
+    <%= javascript_include_tag 'posts' %>
+    
   </div>
 </body>

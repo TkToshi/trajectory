@@ -5,11 +5,12 @@ class ProfilesController < ApplicationController
   def index
     @user = User.all
     @profile = Profile.all
-    @post = Post.all
+    @posts = Post.all
   end
 
   def new
     @profile = Profile.new
+    
   end
 
   def create

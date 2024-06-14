@@ -211,6 +211,23 @@ margin-right: 20px;
   color: #262626;
 }
 
+.preview {
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+}
+
+.preview_title {
+ margin-bottom: 20px;
+
+}
+
+.maps {
+  margin-left: 40px;
+  border: solid black;
+}
+
 /* --ユーザー新規登録------ */
 
 .body_registration {

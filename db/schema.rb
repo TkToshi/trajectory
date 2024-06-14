@@ -52,6 +52,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_22_073835) do
     t.text "post_text", null: false
     t.integer "category_id", null: false
     t.integer "visibility_id", null: false
+    t.string "name"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

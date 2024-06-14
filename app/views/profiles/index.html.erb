@@ -1,3 +1,4 @@
+
 <body class="body_profile">
   <div class="profile-container">
     <header class="profile-header">
@@ -72,7 +73,7 @@
     </header>
     
     <div class="profile-posts">
-      <% @post.each do |post| %> 
+      <% @posts.each do |post| %> 
         <% if user_signed_in? && current_user.id == post.user_id  %>
         <div class="profile-post">
             <%= link_to  edit_post_path(post.id) do%>
@@ -82,6 +83,23 @@
             <i class="fa-solid fa-lock icon-overlay"></i>
           <% end %>
           <div class="post_text">
+            
+            <% @posts.each do |post| %> 
+            <% if user_signed_in? && current_user.id == post.id  %>
+            <button id="showPopupButton" data-post-id="<%= post.id %>"><i class="fa-solid fa-earth-asia"></i></button>
+            <% end %>
+              <script>
+              window.MyApp = window.MyApp || {};
+              
+              window.MyApp.postLatitude = <%= post.latitude.to_f %>;
+              window.MyApp.postLongitude = <%= post.longitude.to_f %>;
+               
+              console.log("Post ID:", <%= post.id %>);
+              console.log("Latitude:", window.MyApp.postLatitude);
+              console.log("Longitude:", window.MyApp.postLongitude);
+              </script>
+            <% end %>
+
             <%= post.post_text%>
           </div>
         </div>

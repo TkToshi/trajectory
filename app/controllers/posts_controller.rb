@@ -9,12 +9,13 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @google_maps_api_key = ENV['GOOGLE_MAPS_API_KEY']
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to @post, notice: 'Post was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,6 +48,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_text, :image, :category_id, :visibility_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:post_text, :image, :category_id, :visibility_id, :name, :latitude, :longitude).merge(user_id: current_user.id)
   end
 end
