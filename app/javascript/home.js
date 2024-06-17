@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // 全てのポップアップボタンにクリックイベントを追加
+  const apiKey = window.GOOGLE_MAPS_API_KEY;
+  console.log('Google Maps API Key:', apiKey); 
   document.querySelectorAll('.showPopupButton').forEach(function(button) {
       button.addEventListener('click', function(event) {
           // ポストID、緯度、経度を取得
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           });
                       }
                   </script>
-                  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+                  <script src="https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap" async defer></script>
               </head>
               <body>
                   <h2>Location Preview</h2>
