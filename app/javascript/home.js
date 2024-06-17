@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.showPopupButton').forEach(function(button) {
       button.addEventListener('click', function(event) {
           // ポストID、緯度、経度を取得
-          var postId = event.target.dataset.postId; // 修正・追記箇所
+          var postId = event.currentTarget.dataset.postId;
           console.log('Post ID:', postId);
-          var latitude = event.target.dataset.latitude; // 修正・追記箇所
+          var latitude = event.currentTarget.dataset.latitude;
           console.log('Latitude:', latitude);
-          var longitude = event.target.dataset.longitude; // 修正・追記箇所
+          var longitude = event.currentTarget.dataset.longitude;
           console.log('Longitude:', longitude);
 
           // ポップアップウィンドウのサイズを設定
