@@ -13,7 +13,7 @@ let marker;     // マーカーオブジェクトを格納する変数を宣言
 let apiKey = window.GOOGLE_MAPS_API_KEY;  // Google Maps APIキーを格納する変数を宣言
 
 
-document.addEventListener('turbo:load', async function() {  
+document.addEventListener('DOMContentLoaded', async function() {  
   if (document.getElementById('map')) {
     loadGoogleMapsApi(apiKey, initMap);
   }
