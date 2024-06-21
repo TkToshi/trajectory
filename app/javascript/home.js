@@ -1,6 +1,6 @@
 //= require posts
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbo:load', function() {
   // 全てのポップアップボタンにクリックイベントを追加
   const apiKey = window.GOOGLE_MAPS_API_KEY;
   console.log('Google Maps API Key:', apiKey); 
