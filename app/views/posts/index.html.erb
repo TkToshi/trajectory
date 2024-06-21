@@ -42,9 +42,6 @@
               <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
             <div class="post-footer">
               <%= render partial: "likes/like", locals: { post: post } %>
-              <div class="likes-count", id = "like-count">
-                <%= post.likes.count %>
-              </div>
               <div class="post-text">
               <%= post.post_text %>
               </div>
