@@ -4,20 +4,18 @@ const animateRight = document.querySelector('#animate_right');
 console.log(animateLeft);
 console.log(animateRight);
 
-const foot = {
-  opacity:[0, 1],
-};
+const foot = [
+  { transform: 'translateY(500px)', opacity: 0 },
+  { transform: 'translateY(0)', opacity: 1 }
+];
 
 const option = {
-  duration: 1000,
+  duration: 5000, //アニメーション完了時間
   iterations: Infinity,
   direction: 'alternate'
 };
 
-setTimeout(() => {
 animateLeft.animate(foot, option);
-},1000);
-
 animateRight.animate(foot, option);
 
 })
