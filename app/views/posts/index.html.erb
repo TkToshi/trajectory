@@ -6,6 +6,7 @@
   <title>Trajectory</title>
  
   <script src="/assets/index.js"></script>
+  <script src="/assets/animate.js"></script>
 </head>
 
 <body class="body">
@@ -24,6 +25,14 @@
   </header>
 
   <main>
+    <div>
+      <div>
+        <%= image_tag "left.png", class: "left_image", id: "animate_left"%>
+      </div>
+      <div>
+        <%= image_tag "right.png", class: "right_image", id: "animate_right"%>
+      </div>
+    </div>    
     <div class="container">
         <div class="feed">
           <% @posts.each do |post|%> 

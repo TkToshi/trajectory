@@ -12,6 +12,7 @@
   height: 70px;
 }
 
+
 .container {
   max-width: 935px;
   margin: 0 auto;
@@ -22,14 +23,28 @@
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 36px;
+  font-family: 'Billabong', sans-serif;
+  margin-bottom: 20px;
 }
+
 
 .menu {
   font-size: 12px;
   font-weight: bold;
   margin-top: 7%;
+}
+
+.left_image {
+  width:  20px;
+  height: 50px;
+  margin-left: 50px;
+}
+
+.right_image {
+  width:  20px;
+  height: 50px;
+  margin-left: 100px;
 }
 
 nav ul {
@@ -256,11 +271,7 @@ margin-right: 20px;
   border-radius: 1px;
 }
 
-.logo {
-  font-size: 36px;
-  font-family: 'Billabong', sans-serif;
-  margin-bottom: 20px;
-}
+
 
 h3 {
   font-size: 17px;
@@ -342,12 +353,6 @@ h3 {
   width: 350px;
   text-align: center;
   border-radius: 1px;
-}
-
-.logo {
-  font-size: 36px;
-  font-family: 'Billabong', sans-serif;
-  margin-bottom: 20px;
 }
 
 .field {
@@ -823,10 +828,7 @@ h2 {
     padding: 0 10px;
   }
 
-  .logo {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+  
 
   .menu {
     margin-top: 10px;
