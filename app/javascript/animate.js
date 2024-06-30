@@ -6,11 +6,18 @@ console.log(animateRight);
 
 const foot = {
   opacity:[0, 1],
+};
 
-}
+const option = {
+  duration: 1000,
+  iterations: Infinity,
+  direction: 'alternate'
+};
 
-animateLeft.animate(foot, 2000);
+setTimeout(() => {
+animateLeft.animate(foot, option);
+},1000);
 
-requestAnimationFrame(anime);
+animateRight.animate(foot, option);
 
 })
